@@ -1,0 +1,204 @@
+            /*Generelt*/
+            #index{
+                background: url(Bilder/internett_bilde.jpg) no-repeat center fixed;
+                background-size: cover;
+            }
+
+            h1{
+                font-family: Verdana, Tahoma, sans-serif;
+                text-align: center;
+            }
+
+            p{
+                line-height: 200%;
+            }
+
+            body{
+                border-collapse: collapse;
+            }
+
+            #generelt{
+                align-items: center;
+            }
+
+            #internett, #kilder{
+                background-color: grey;
+            }
+
+            #hoved{
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+
+                align-items: center;
+                justify-content: center;
+            }
+
+            .boks{
+                text-align: center;
+                width: 400px;
+                height: 350px;
+                background-color: lightblue;
+
+                margin: 10px;
+                padding: 20px;
+
+                border: 2px solid white;
+
+                transition: transform 0.60s ease;
+            
+            }
+
+            .boks:hover {
+                -webkit-transform: scale(1.08);
+                transform: scale(1.08);
+            
+                /*Dette gjør at man kan skalere, altså zoome boksene*/
+            }
+
+
+            /*Meny*/
+            #meny{
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(40px, 1fr));
+                gap: 20px;
+                background-color: hsl(64, 80%, 70%);
+
+                border: 5px solid #000000;
+            }
+
+            .tekstmeny{
+                text-align: center;
+                font-family: 'Times New Roman', Times, serif;
+                font-size: 30px; 
+            }
+
+            .a_meny{
+                color: rgb(109, 104, 104);
+                text-decoration: none;
+                text-transform: none;
+            }
+
+            .a_meny:visited{
+                color: black;
+            }
+
+            .a_meny:hover{
+                color: rgb(138, 130, 130);
+            }
+
+            .a_meny:active{
+                font-weight: bold;
+            }
+
+            #sticky{
+                position: sticky;
+                top: 0;
+            }
+
+
+            /*Lenker*/
+            a{
+                color: black;
+            }
+
+            a:visited{
+                color: purple;
+            }
+
+            a:hover{
+                color: red;
+            }
+
+            a:active{
+                color: black;
+            }
+
+            a:focus{
+                font-weight: bold;
+            }
+
+            /*Index*/
+            #startboks{
+                text-align: center;
+                width: 600px;
+                height: 350px;
+                background-color: lightblue;
+
+                margin: 10px;
+                padding: 20px;
+
+                border: 2px solid white;
+                font-size: 20px;
+
+            }
+
+            /*Internett*/
+            #generelt_om_internett{
+                background: url("Bilder/sosiale_medier_bilde.jpg");
+                background-size: cover;
+            }
+
+            #hvordan_virker_det{
+                background: url("Bilder/tilkoblinger_bilde.png");
+                background-size: cover;
+            }
+
+            #historie{
+                background: url("Bilder/søkemotorer_bilde.png") no-repeat;
+                background-size: cover;
+            }
+
+            #protokoller{
+                background: url("Bilder/programmering_bilde.jpg");
+                background-size: cover;
+            }
+
+            .tooltip{
+                position: relative;
+                display: inline-block;
+                border-bottom: 1px dotted black; /* Prikker under */
+            }
+
+            .tooltip .tooltiptext{
+                visibility: hidden;
+                width: 120px;
+                background-color: white;
+                color: black;
+                text-align: center;
+                padding: 5px 0;
+                border-radius: 6px;
+               
+                position: absolute;
+                z-index: 1;
+            }  
+
+            .tooltip:hover .tooltiptext{
+                visibility: visible;
+
+                width: 120px;
+                top: 100%;
+                left: 50%;
+                margin-left: -60px; 
+            }
+
+            /*Kilder*/
+
+            #uordnet_boks{
+                font-family:'Segoe UI', Tahoma, Verdana, sans-serif;
+            }
+
+            #kildeboks{
+                text-align: center;
+                width: 950px;
+                height: 250px;
+                background-color: lightblue;
+
+                margin: 10px;
+                padding: 20px;
+
+                border: 2px solid black;
+
+                font-size: 20px;
+            }
+            
