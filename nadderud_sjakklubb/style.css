@@ -17,7 +17,7 @@
     border: 2px solid white;
 }*/
 
-#overskrift {
+.overskrift {
     text-align: center;
     width: 400px;
     height: 80px;
@@ -28,9 +28,16 @@
     border: 2px solid black;
 }
 
-.informasjon {
+.sjakknøtter_informasjon {
     font-size: 20px;
     text-align: center;
+}
+
+.informasjon {
+    margin-left: 40px;
+    font-size: 20px;
+    
+    list-style: circle;
 }
 
 
@@ -41,8 +48,9 @@
 
 .underoverskrift {
     margin-top: 30px;
-    font-size: 30px;
-    text-align: center;
+    margin-left: 20px;
+    font-size: 40px;
+    
 }
 
 .informasjon .underoverskrift {
@@ -233,26 +241,90 @@ nav {
 
 /*Når width < 1024px */
 @media (max-width: 1024px) {
+
     #logo {
         font-size: 50px;
     }
 
-    #overskrift {
-        font-size: 80px;
+    .overskrift {
+        font-size: 60px;
         width: 500px;
         height: 110px;
         margin: auto;
     }
 
-    .underoverskrift {
+    .sjakk {
+        width: 800px;
+    height: 800px;
+    }
+
+    .tårn {
+        font-size: 70px;
+    }
+    
+    .springer {
+        font-size: 70px;
+    }
+    
+    .løper {
+        font-size: 70px;
+    }
+    
+    .dronning {
+        font-size: 70px;
+    }
+    
+    .konge {
+        font-size: 70px;
+    }
+    
+    .bonde {
         font-size: 70px;
     }
 
-    .informasjon .informasjon_topp {
+    .usynlig {
+        font-size: 40px;
+    }
+
+    #knapp {
+        width: 300px;
+        height: 60px;
+
+        font-size: 50px;
+    }
+
+    .informasjon {
+        font-size: 30px;
+    }
+
+    .underoverskrift {
         font-size: 45px;
+        margin-left: 20px;
+    }
+
+    .sjakknøtter_informasjon {
+        font-size: 30px;
+        text-align: center;
+    }
+
+    #løsning1 {
+        font-size: 25px;
+    }
+
+    #løsning2 {
+        font-size: 25px;
+    }
+
+    .informasjon {
+        font-size: 30px;
         margin-left: 40px;
         margin-top: 10px;
-    
+    }
+
+    .informasjon_topp {
+        font-size: 40px;
+        margin: auto;
+        margin-top: 10px;
     }
     
     .burger-meny {
