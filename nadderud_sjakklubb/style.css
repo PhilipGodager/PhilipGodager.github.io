@@ -89,6 +89,7 @@ nav {
     min-height: 8vh;
     background-color: #c09b6f;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border: 1px solid #000;
 
 }
 
@@ -239,6 +240,49 @@ nav {
     font-size: 40px;
 }
 
+/*Tabell */
+.program_informasjon {
+    text-align: center;
+    font-size: 50px;
+    margin-top: 30px;
+}
+
+table {
+    width: 80%;
+    margin: auto;
+    margin-top: 20px;
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    background-color: beige;
+}
+
+
+
+th, td {
+    border: 1px solid rgb(0, 0, 0);
+    padding: 10px;
+}
+
+tr:nth-child(odd)  {
+    background-color: rgba(168, 105, 33, 0.74);
+}
+
+td:last-child{
+    font-style: italic;
+}
+
+thead > tr:first-child{
+    background-color: grey;
+}
+
+th:first-child{
+    width: 10px;
+}
+
+td:first-child{
+    width: 10px;
+}
 /*Når width < 1024px */
 @media (max-width: 1024px) {
 
@@ -258,27 +302,7 @@ nav {
         height: 800px;
     }
 
-    .tårn {
-        font-size: 70px;
-    }
-    
-    .springer {
-        font-size: 70px;
-    }
-    
-    .løper {
-        font-size: 70px;
-    }
-    
-    .dronning {
-        font-size: 70px;
-    }
-    
-    .konge {
-        font-size: 70px;
-    }
-    
-    .bonde {
+    .tårn, .springer, .løper, .dronning, .konge, .bonde {
         font-size: 70px;
     }
 
@@ -290,11 +314,13 @@ nav {
         width: 300px;
         height: 60px;
 
+        position: relative;
+        top: 30px;
         font-size: 50px;
     }
 
     .underoverskrift {
-        font-size: 45px;
+        font-size: 55px;
         margin-left: 30px;
         margin-top: 50px;
     }
@@ -304,12 +330,11 @@ nav {
         text-align: center;
     }
 
-    #løsning1 {
+    #løsning1, #løsning2 {
         font-size: 55px;
-    }
 
-    #løsning2 {
-        font-size: 55px;
+        position: relative;
+        top: 30px;
     }
 
     .informasjon {
@@ -319,7 +344,7 @@ nav {
     }
 
     .informasjon_topp {
-        font-size: 70px;
+        font-size: 55px;
         margin: auto;
         margin-top: 20px;
     }
@@ -339,10 +364,10 @@ nav {
         top: 0;
         right: 0px;
 
-        height: cover ;
+        height: 100vh ;
         width: 40%;
-        
-        background-color: #965336;
+    
+        background-color: grey;
         
         flex-direction: column;
         align-items: center;
@@ -350,6 +375,7 @@ nav {
 
     .meny-lenker li {
         text-align: center;
+        margin-top: 50px;
     }
 
     .meny-lenker li a {
@@ -358,6 +384,49 @@ nav {
 
     .meny-lenker.active {
         display: flex;
+    }
+
+    /*Tabell */
+
+    .program_informasjon {
+        text-align: center;
+        font-size: 50px;
+        margin-top: 30px;
+    }
+
+    table {
+        width: 80%;
+        margin: auto;
+        margin-top: 20px;
+        font-size: 30px;
+        font-family: Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        background-color: beige;
+    }
+    
+    th, td {
+        border: 1px solid rgb(0, 0, 0);
+        padding: 10px;
+    }
+    
+    tr:nth-child(odd)  {
+        background-color: rgba(168, 105, 33, 0.74);
+    }
+    
+    td:last-child{
+        font-style: italic;
+    }
+    
+    thead > tr:first-child{
+        background-color: grey;
+    }
+    
+    th:first-child{
+        width: 10px;
+    }
+    
+    td:first-child{
+        width: 10px;
     }
 
 }
@@ -373,11 +442,15 @@ nav {
 }
 
 /*Når width < 600px */  
-@media (max-width: 600px) {
+@media (max-width: 740px) {
 
     #logo {
         width: 50%;
-    } 
+    }
+
+    .meny-lenker {
+        font-size: 30px;
+    }
 }
 
 
