@@ -247,7 +247,7 @@ nav {
     }
 
     .overskrift {
-        font-size: 60px;
+        font-size: 70px;
         width: 500px;
         height: 110px;
         margin: auto;
@@ -255,7 +255,7 @@ nav {
 
     .sjakk {
         width: 800px;
-    height: 800px;
+        height: 800px;
     }
 
     .tårn {
@@ -293,38 +293,35 @@ nav {
         font-size: 50px;
     }
 
-    .informasjon {
-        font-size: 30px;
-    }
-
     .underoverskrift {
         font-size: 45px;
-        margin-left: 20px;
+        margin-left: 30px;
+        margin-top: 50px;
     }
 
     .sjakknøtter_informasjon {
-        font-size: 30px;
+        font-size: 50px;
         text-align: center;
     }
 
     #løsning1 {
-        font-size: 25px;
+        font-size: 55px;
     }
 
     #løsning2 {
-        font-size: 25px;
+        font-size: 55px;
     }
 
     .informasjon {
-        font-size: 30px;
-        margin-left: 40px;
+        font-size: 50px;
+        margin-left: 60px;
         margin-top: 10px;
     }
 
     .informasjon_topp {
-        font-size: 40px;
+        font-size: 70px;
         margin: auto;
-        margin-top: 10px;
+        margin-top: 20px;
     }
     
     .burger-meny {
