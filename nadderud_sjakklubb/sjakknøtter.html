@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html id="index" lang="no">
+<html id="sjakknøtterdoc" lang="no">
     <head>
         <meta charset="UTF-8">
         <title>Nadderud sjakklubb</title>
@@ -33,8 +33,10 @@
         <br>
         <br>
         <div id="hoved">
-            <div class="boks">
-                <h1 class="overskrift">Sjakknøtter</h1>
+            <div>
+                <div class="overskriftboks">
+                    <h1 class="overskrift">Sjakknøtter</h1>
+                </div>
                 <br>
                 <p class="informasjon_topp">Her er noen sjakknøtter som er i ulik vanskelighetsgrad. Løsningene er under sjakkbrettene. Lykke til!</p>
             </div>
@@ -45,8 +47,9 @@
 
        
     
-    <!--
+    <!-- VANLIG SJAKKBRETT
     <div class="sjakk">
+        SVART
         <div class="tårn">&#9820</div>
         <div class="springer">&#9822</div>
         <div class="løper">&#9821</div>
@@ -101,6 +104,7 @@
         <div></div>
         <div></div>
     
+        HVIT
         <div class="bonde">&#9817</div>
         <div class="bonde">&#9817</div>
         <div class="bonde">&#9817</div>
@@ -219,7 +223,7 @@
     
     </div>
     <div class="knappboks">
-    <button id="knapp" onclick="myFunction(`løsning1`)">Løsning</button>
+    <button class="knapp" onclick="myFunction(`løsning1`)">Løsning</button>
 </div>
     <div id="løsning1">
         Først flytter Dronning til a3. Siden det da blir sjakk, og kongen ikke har noen steder å flykte, må svart blokkere med noe. For eksempel blokkerer svart med tårnet til d6. Deretter slår dronningen tårnet på d6 og dermed er det sjakk matt. (På sjakkspråk: Da3+, Td6, Dxd6#)
@@ -329,14 +333,122 @@
 
             </div>
             <div class="knappboks">
-            <button id="knapp" onclick="myFunction(`løsning2`)">Løsning</button>
+            <button class="knapp" onclick="myFunction(`løsning2`)">Løsning</button>
             </div>
 
     <div id="løsning2">
-        Først flytter svart tårnet sitt til g5. Hvit sin konge kan ikke rømme på noen måte, og uansett hva hvit spiller, kan ikke hvit forhindre at tårnet kommer til 36. (På sjakkspråk: Tg6, Ta1d1, Te6#)
+        Først flytter svart tårnet sitt til g6. Hvit sin konge kan ikke rømme på noen måte, og uansett hva hvit spiller, kan ikke hvit forhindre at tårnet kommer til e6. (På sjakkspråk: Tg6, Tad1, Te6#)
         </div>
         <br>
         <br>
+        <br>
+        <br>
+        <br>
+
+
+        <div class="sjakknøtter_informasjon">
+            <h2>Vanskelig</h2>
+            <p>Hvordan kan svart sette matt i to trekk?</p>
+        </div>
+        <div class="sjakk">
+            <div class="usynlig"><p>8</p></div>
+            <div class="springer">&#9816</div>
+            <div></div>
+            <div class="konge">&#9818</div>
+            <div class="løper">&#9821</div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        
+            <div class="usynlig"><p>7</p></div>
+            <div class="løper">&#9815</div>
+            <div class="bonde">&#9823</div>
+            <div class="bonde">&#9823</div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div class="tårn">&#9820</div>
+        
+            <div class="usynlig"><p>6</p></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div class="bonde">&#9817</div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            
+            <div class="usynlig"><p>5</p></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div class="springer">&#9822</div>
+            <div class="bonde">&#9823</div>
+            <div class="løper">&#9821</div>
+    
+            <div class="usynlig"><p>4</p></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div class="dronning">&#9813</div>
+            <div class="bonde">&#9817</div>
+            <div></div>
+            <div></div>
+            
+    
+            <div class="usynlig"><p>3</p></div>
+            <div class="dronning">&#9819</div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+    
+            <div class="usynlig"><p>2</p></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div class="bonde">&#9817</div>
+            <div class="løper">&#9815</div>
+            <div></div>
+            <div class="konge">&#9812</div>
+            <div></div>
+    
+            <div class="usynlig"><p>1</p></div>
+            <div></div>
+            <div></div>
+            <div class="tårn">&#9814</div>
+            <div class="springer">&#9822</div>
+            <div></div>
+            <div></div>
+            <div class="tårn">&#9814</div>
+            <div></div>
+            
+            <p class="usynlig"></p>
+            <p class="usynlig">A</p>
+            <p class="usynlig">B</p>
+            <p class="usynlig">C</p>
+            <p class="usynlig">D</p>
+            <p class="usynlig">E</p>
+            <p class="usynlig">F</p>
+            <p class="usynlig">G</p>
+            <p class="usynlig">H</p>
+        </div>
+        <div class="knappboks">
+            <button class="knapp" onclick="myFunction(`løsning3`)">Løsning</button>
+            </div>
+
+    <div id="løsning3">
+        Svart flytter først sin dronning til h3, altså et dronningoffer. Hvit må ta denne, og dermed kan svart flytte sin løper til f3 hvor det så kommer en avdekkersjakk på den hvite kongen. Den hvite kongen er i sjakk og kan ikke redde seg. Dermed er det sjakkmatt. (På sjakkspråk: Dh3, Kxh3, Lf3#)
+        </div>
         <br>
         <br>
         <br>

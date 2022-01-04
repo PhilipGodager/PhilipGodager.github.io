@@ -10,6 +10,7 @@ body {
 
 .overskrift, .underoverskrift {
     font-family: serif;
+    font-size: 40px;
 }
 
 /*.boks {
@@ -25,18 +26,27 @@ body {
     border: 2px solid white;
 }*/
 
+#indexdoc {
+    background: url("Bilder/sjakkbrikker_index.jpg") no-repeat center fixed;
+    background-size: cover;
+}
+
+#påmeldingdoc {
+    background: url("Bilder/sjakklokke_påmelding.jpg") no-repeat center fixed;
+    background-size: cover;
+}
 
 /*Overskrifter */
-.overskrift {
+
+.overskriftboks {
     text-align: center;
-    width: 400px;
+    width: 500px;
     height: 80px;
     background-color: rgb(184, 184, 184);
 
     padding: 8px;
     margin: auto;
     border: 2px solid black;
-
 }
 
 #logo {
@@ -54,8 +64,9 @@ body {
 
 .underoverskrift {
     margin-top: 30px;
+    margin-bottom: 20px;
     margin-left: 20px;
-    font-size: 40px;
+    font-size: 30px;
     
 }
 
@@ -65,7 +76,8 @@ body {
 
 /*Generell informasjon */
 .informasjon {
-    margin-left: 40px;
+    margin-left: 50px;
+    margin-top: 20px;
     font-size: 20px;
     
     list-style: circle;
@@ -74,13 +86,44 @@ body {
 .informasjon_topp {
     font-size: 20px;
     text-align: center;
+    margin-top: 30px;
+    margin-left: 30px;
+}
+
+/*Påmelding */
+#påmelding_informasjon {
+    font-size: 40px;
+
+    text-align: center;
+
+    margin-top: 50px;
+
+    color: white;
 }
 
 
-/*Sjakknøtter */
-.sjakknøtter_informasjon {
+/*Footer */
+footer a {
+    width: 100%;
+
     font-size: 20px;
-    text-align: center;
+
+    color: black;
+}
+
+footer a:visited {
+    color: black;
+}
+
+footer a:hover {
+    color: grey;
+}
+
+
+footer {
+    position: absolute;
+    bottom: 10px; 
+    
 }
 
 
@@ -90,7 +133,7 @@ a {
 }
 
 a:visited {
-    color: purple;
+    color: white;
 }
 
 a:hover {
@@ -104,6 +147,7 @@ a:active {
 a:focus {
     font-weight: bold;
 }
+
 
 /*Meny */
 nav {
@@ -182,36 +226,42 @@ nav {
     grid-template-rows: repeat(9, 1fr);
 }
 
-#løsning1 {
+.sjakknøtter_informasjon {
+    font-size: 20px;
+    text-align: center;
+}
+
+
+#løsning1, #løsning2, #løsning3 {
     width: 100%;
     padding: 50px 0;
     text-align: center;
     background-color: grey;
     margin-top: 20px;
+    margin-bottom: 40px;
   }
 
-  #løsning2 {
-    width: 100%;
-    padding: 50px 0;
-    text-align: center;
-    background-color: grey;
-    margin-top: 20px;
-  }
   
-  .usynlig {
-      position: relative;
-      top: 15px;
-      background-color: white!important;
+.usynlig {
+    position: relative;
+    top: 15px;
+    background-color: white!important;
   }
 
-  .knappboks {
-      height: 30px;
-      display: flex;
+.knapp {
+      font-size: 30px;
+
+  }
+
+.knappboks {
+    margin-top: 10px;
+    height: 60px;
+    display: flex;
     justify-content: center;
-
   }
 
-  #knapp:hover {
+
+.knapp:hover {
     background-color: #4CAF50;
     color: white;
   }
@@ -276,8 +326,6 @@ table {
     background-color: beige;
 }
 
-
-
 th, td {
     border: 1px solid rgb(0, 0, 0);
     padding: 10px;
@@ -304,7 +352,6 @@ td:first-child{
 }
 
 
-
 /*Når width < 1024px */
 @media (max-width: 1024px) {
 
@@ -320,10 +367,22 @@ td:first-child{
         margin: auto;
     }
 
+    .overskriftboks {
+        text-align: center;
+        width: 750px;
+        height: 180px;
+        background-color: rgb(184, 184, 184);
+
+        padding: 8px;
+        margin: auto;
+        border: 2px solid black;
+    }
+
     .underoverskrift {
         font-size: 55px;
         margin-left: 30px;
         margin-top: 50px;
+        margin-bottom: 20px;
     }
 
 
@@ -338,7 +397,7 @@ td:first-child{
     .informasjon_topp {
         font-size: 45px;
         margin: auto;
-        margin-top: 20px;
+        margin-top: 30px;
     }
     
 
@@ -398,29 +457,19 @@ td:first-child{
         font-size: 40px;
     }
 
-    #knappboks {
-        width: 300px;
-        height: 60px;
-
-        position: relative;
-        top: 30px;
-        font-size: 50px;
-
-        display: flex;
-        justify-content: center;
-
-    }
-
-    #knapp
-
-    
 
     .sjakknøtter_informasjon {
         font-size: 50px;
         text-align: center;
     }
 
-    #løsning1, #løsning2 {
+    .knapp {
+        font-size: 55px;
+        height: 80px;
+        margin-top: 50px;
+    }
+
+    #løsning1, #løsning2, #løsning3 {
         font-size: 55px;
 
         position: relative;
@@ -480,21 +529,54 @@ td:first-child{
         
     }
 
+    .overskrift {
+        font-size: 70px;
+        width: 500px;
+        height: 110px;
+        margin: auto;
+    }
+
+    .overskriftboks {
+        text-align: center;
+        width: 550px;
+        height: 180px;
+        background-color: rgb(184, 184, 184);
+
+        padding: 8px;
+        margin: auto;
+        border: 2px solid black;
+    }
+
+    .knapp {
+        margin-top: 50px;
+    }
     
 }
 
-/*Når width < 600px */  
+/*Når width < 740px */  
 @media (max-width: 740px) {
-
-    /*Overskifter */
-    #logo {
-        width: 50%;
-    }
-
     /*Meny */
     .meny-lenker {
         font-size: 30px;
     }
+
+    /*Overskrifter */
+    .overskrift {
+        text-align: center;
+        font-size: 70px;
+        
+        margin: auto;
+    }
+
+    .overskriftboks {
+        background-color: rgb(184, 184, 184);
+
+        width: 100vw;
+        padding: 8px;
+        margin: auto;
+        border: 2px solid black;
+    }
+
 }
 
 
