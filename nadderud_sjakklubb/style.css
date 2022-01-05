@@ -101,6 +101,10 @@ body {
     color: white;
 }
 
+.påmelding_informasjon a {
+    color: white;
+}
+
 
 /*Footer */
 /*
@@ -424,7 +428,7 @@ td:first-child{
         
         flex-direction: column;
         position: absolute;
-        top: 0;
+        top: 0px;
         right: 0px;
 
         height: 100vh ;
@@ -449,6 +453,10 @@ td:first-child{
 
     .meny-lenker.active {
         display: flex;
+    }
+
+    #øverste_lenke {
+        margin-top: 200px;
     }
 
     /*Påmelding */
