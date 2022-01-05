@@ -91,8 +91,8 @@ body {
 }
 
 /*Påmelding */
-#påmelding_informasjon {
-    font-size: 40px;
+.påmelding_informasjon {
+    font-size: 20px;
 
     text-align: center;
 
@@ -103,12 +103,15 @@ body {
 
 
 /*Footer */
+/*
 footer a {
     width: 100%;
 
     font-size: 20px;
 
     color: black;
+
+    justify-content: space-evenly;
 }
 
 footer a:visited {
@@ -121,10 +124,16 @@ footer a:hover {
 
 
 footer {
-    position: absolute;
+    position: fixed;
     bottom: 10px; 
-    
+    padding: 120;
+    text-align: center;
 }
+
+.footerboks {
+    width: 100vw;   	
+}
+*/
 
 
 /*Lenker */
@@ -312,7 +321,7 @@ nav {
 /*Tabell */
 .program_informasjon {
     text-align: center;
-    font-size: 50px;
+    font-size: 30px;
     margin-top: 30px;
 }
 
@@ -320,7 +329,7 @@ table {
     width: 80%;
     margin: auto;
     margin-top: 20px;
-    font-size: 30px;
+    font-size: 20px;
     font-family: Arial, Helvetica, sans-serif;
     border-collapse: collapse;
     background-color: beige;
@@ -442,6 +451,10 @@ td:first-child{
         display: flex;
     }
 
+    /*Påmelding */
+    .påmelding_informasjon {
+        font-size: 45px;
+    }
 
     /*Sjakknøtter*/
     .sjakk {
@@ -459,18 +472,21 @@ td:first-child{
 
 
     .sjakknøtter_informasjon {
-        font-size: 50px;
+        font-size: 30px;
         text-align: center;
+        margin-top: 100px;
     }
 
     .knapp {
-        font-size: 55px;
-        height: 80px;
-        margin-top: 50px;
+        font-size: 45px;
+        height: 60px;
+        margin-top: 40px;
+        
+        
     }
 
     #løsning1, #løsning2, #løsning3 {
-        font-size: 55px;
+        font-size: 30px;
 
         position: relative;
         top: 30px;
@@ -548,7 +564,7 @@ td:first-child{
     }
 
     .knapp {
-        margin-top: 50px;
+        margin-top: 40px;
     }
     
 }
