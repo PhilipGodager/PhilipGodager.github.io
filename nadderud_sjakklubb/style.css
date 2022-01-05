@@ -523,26 +523,25 @@ td:first-child{
         padding: 10px;
     }
     
-    tr:nth-child(odd)  {
+    tr:nth-child(odd) {
         background-color: rgba(168, 105, 33, 0.74);
     }
     
-    td:last-child{
+    td:last-child {
         font-style: italic;
     }
     
-    thead > tr:first-child{
+    thead > tr:first-child {
         background-color: grey;
     }
     
-    th:first-child{
+    th:first-child {
         width: 10px;
     }
     
-    td:first-child{
+    td:first-child {
         width: 10px;
     }
-
 }
 
 /*Når width < 920px */
