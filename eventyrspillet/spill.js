@@ -1,10 +1,20 @@
-var bakgrunnsmusikk = document.getElementById("bakgrunnsmusikk");
-  function playAudio() {
-    bakgrunnsmusikk.play();
+// Get the video
+var video = document.getElementById("myVideo");
+
+// Get the button
+var btn = document.getElementById("myBtn");
+
+// Pause and play the video, and change the button text
+function myFunction() {
+  if (video.paused) {
+    video.play();
+    btn.innerHTML = "Skru av musikk";
+  } else {
+    video.pause();
+    btn.innerHTML = "Skru på musikk";
   }
-  function pauseAudio() {
-    bakgrunnsmusikk.pause();
-  }
+}
+
 
 var audio = new Audio();
 
@@ -269,7 +279,7 @@ const textNodes = [
     options: [
       {
         text: 'Du flyr hjem til jorden',
-        nextText: 22
+        nextText: 20
       },
       {
         text: 'Du blir den nye stjernehelten i universet',
@@ -324,10 +334,76 @@ const textNodes = [
   {
     id: 20,
     text: 'Gratulerer! Du overlevde og kom deg trygt tilbake igjen til jorden.',
+    options: [
+      {
+        text: 'Restart',
+        nextText: -1
+      }
+    ]
   },
   {
     id: 21,
-    text: 'Hei'
+    text: 'Du ble oppdaget, og døde dessverre',
+    options: [
+      {
+        text: 'Restart',
+        nextText: -1
+      }
+    ]
+  },
+  {
+    id: 22,
+    text: 'Gratulerer! Nå kaller alle deg "Star Lord"',
+    options: [
+      {
+        text: 'Restart',
+        nextText: -1
+      }
+    ]
+  },
+  {
+    id: 23,
+    text: 'Med dine IT-skills får du til dette, men roboten blir etterhvert ødelagt og du dør',
+    options: [
+      {
+        text: 'Restart',
+        nextText: -1
+      }
+    ]
+  },
+  {
+    id: 24,
+    text: 'Bra valg, fordi den var så og si ødelagt. Du løper nå igjennom gangen og ser et romskip i et rom. Hva gjør du?',
+    options: [
+      {
+        text: 'Du går inn i skipet og prøver å fly hjem til jorden',
+        nextText: 25
+      },
+      {
+        text: 'Lar den være',
+        nextText: 26
+      }
+    ]
+  },
+  {
+    id: 25,
+    text: 'Romskipet var ødelagt, så du dør dessverre',
+    options: [
+      {
+        text: 'Restart',
+        nextText: -1
+      }
+    ]
+  },
+  {
+    id: 26,
+    text: 'Bra valg, fordi den var også ødelagt. Dessverre så er du nå i en blindvei og alle romvesnene er etter deg, så du dør',
+    options: [
+      {
+        text: 'Restart',
+        nextText: -1
+      }
+    ]
   }
 ]
 
