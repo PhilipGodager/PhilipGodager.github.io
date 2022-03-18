@@ -1,80 +1,50 @@
-// Get the video
-var video = document.getElementById("myVideo");
 
-// Get the button
-var btn = document.getElementById("myBtn");
-
-// Pause and play the video, and change the button text
-function myFunction() {
-  if (video.paused) {
-    video.play();
-    btn.innerHTML = "Skru av musikk";
-  } else {
-    video.pause();
-    btn.innerHTML = "Skru på musikk";
-  }
-}
-
-
-var audio = new Audio();
-
-audio.oncanplaythrough = function(){
-audio.play();
-}
-
-audio.loop = true;
-
-audio.onended = function(){
-audio.play();
-}
-
-
-const textElement = document.getElementById('text')
-const optionButtonsElement = document.getElementById('option-buttons')
+const textElement = document.getElementById('tekst')
+const valgKnapperElement = document.getElementById('valg-knapper')
 
 let state = {}
 
-function startGame() {
+function startSpill() {
   state = {}
-  showTextNode(1)
+  visTextNode(1)
 }
 
-function showTextNode(textNodeIndex) {
+function visTextNode(textNodeIndex) {
   const textNode = textNodes.find(textNode => textNode.id === textNodeIndex)
   textElement.innerText = textNode.text
-  while (optionButtonsElement.firstChild) {
-    optionButtonsElement.removeChild(optionButtonsElement.firstChild)
+  while (valgKnapperElement.firstChild) {
+    valgKnapperElement.removeChild(valgKnapperElement.firstChild)
   }
 
-  textNode.options.forEach(option => {
-    if (showOption(option)) {
+  textNode.valg.forEach(valg => {
+    if (visValg(valg)) {
       const button = document.createElement('button')
-      button.innerText = option.text
+      button.innerText = valg.text
       button.classList.add('btn')
-      button.addEventListener('click', () => selectOption(option))
-      optionButtonsElement.appendChild(button)
+      button.addEventListener('click', () => selectValg(valg))
+      valgKnapperElement.appendChild(button)
     }
   })
 }
 
-function showOption(option) {
-  return option.requiredState == null || option.requiredState(state)
+function visValg(valg) {
+  return valg.requiredState == null || valg.requiredState(state)
 }
 
-function selectOption(option) {
-  const nextTextNodeId = option.nextText
+function selectValg(valg) {
+  const nextTextNodeId = valg.nextText
   if (nextTextNodeId <= 0) {
-    return startGame()
+    return startSpill()
   }
-  state = Object.assign(state, option.setState)
-  showTextNode(nextTextNodeId)
+  state = Object.assign(state, valg.setState)
+  visTextNode(nextTextNodeId)
 }
 
 const textNodes = [
   {
     id: 1,
     text: 'Trykk her for å begynne spillet',
-    options: [
+    valg: [
       {
         text: 'Start spillet',
         nextText: 2
@@ -84,7 +54,7 @@ const textNodes = [
   {
     id: 2,
     text: 'Du våkner opp i et slags fengsel i et romskip og husker ikke hvordan du kom dit. Du ser en vakt utenfor fengselet. Hva gjør du?',
-    options: [
+    valg: [
       {
         text: 'Bestikker vakten med godteri',
         nextText: 3
@@ -102,7 +72,7 @@ const textNodes = [
   {
     id: 3,
     text: 'Vakten liker godteriet ditt og lar deg komme ut av fengselet. Nå er han på laget ditt. Hva gjør du nå?',
-    options: [
+    valg: [
       {
         text: 'Du tar på deg klærne hans og later som om du er et romvesen',
         nextText: 6
@@ -116,7 +86,7 @@ const textNodes = [
   {
     id: 4,
     text: 'Ventilasjonssystemet er for trangt, men det er en mulighet å rømme igjennom. Hva gjør du?',
-    options: [
+    valg: [
       {
         text: 'Du prøver å ikke spise noen ting for å bli tynnere for å kunne krype igjennom ventilasjonssystemet',
         nextText: 8
@@ -131,7 +101,7 @@ const textNodes = [
   {
     id: 5,
     text: 'Du dør etterhvert av romvesner som tydeligvis hadde fanget deg for å studere og deretter drepe deg.',
-    options: [
+    valg: [
       {
         text: 'Restart',
         nextText: -1
@@ -141,7 +111,7 @@ const textNodes = [
   {
     id: 6,
     text: 'De andre vaktene legger ikke merke til at du ikke er en vakt. Hvor går du videre?',
-    options: [
+    valg: [
       {
         text: 'I vaktrommet for å slå av alle kameraer',
         nextText: 10
@@ -159,7 +129,7 @@ const textNodes = [
   {
     id: 7,
     text: 'Bra jobbet! Du kan ikke stole på noen i verdensrommet. Du ser tre dører foran deg. Hvilke av de velger du?',
-    options: [
+    valg: [
       {
         text: 'Dør med dødningssymbol',
         nextText: 13
@@ -177,7 +147,7 @@ const textNodes = [
   {
     id: 8,
     text: 'Du dør dessverre av sultmangel',
-    options: [
+    valg: [
       {
         text: 'Restart',
         nextText: -1
@@ -187,7 +157,7 @@ const textNodes = [
   {
     id: 9,
     text: 'Du blir gal av å være i fengselet og dør i fengselet',
-    options: [
+    valg: [
       {
         text: 'Restart',
         nextText: -1
@@ -197,7 +167,7 @@ const textNodes = [
   {
     id: 10,
     text: 'Det er veldig avansert teknologi i rommet, men heldigvis har du gått IT. Hvordan går du frem for å slå av kameraene?',
-    options: [
+    valg: [
       {
         text: 'Du trykker på den røde knappen',
         nextText: 13
@@ -216,7 +186,7 @@ const textNodes = [
   {
     id: 11,
     text: 'Vaktens klær er ikke laget for utenfor romskipet så du dør av oksygenmangel',
-    options: [
+    valg: [
       {
         text: 'Restart',
         nextText: -1
@@ -226,7 +196,7 @@ const textNodes = [
   {
     id: 12,
     text: 'Du skyter alle på din vei, men når du kommer til hovedrommet er det hundrevis av vakter der. Hva gjør du?',
-    options: [
+    valg: [
       {
         text: 'Du fortsetter å skyte alle du ser',
         nextText: 17
@@ -244,7 +214,7 @@ const textNodes = [
   {
     id: 13,
     text: 'Her ser du et nytt romskip. Hva gjør du?',
-    options: [
+    valg: [
       {
         text: 'Drar hjem til jorden',
         nextText: 20
@@ -258,7 +228,7 @@ const textNodes = [
   {
     id: 14,
     text: 'Regnbuedøren og nøkkeldøren leder til samme rom. Her er alle nøklene til alle rom på skipet, men rommet er svært overvåket. Hva gjør du?',
-    options: [
+    valg: [
       {
         text: 'Går ut av rommet igjen',
         nextText: 21
@@ -276,7 +246,7 @@ const textNodes = [
   {
     id: 15,
     text: 'Med dine IT-skills klarer du dette og tar over skipet. Hva gjør du?',
-    options: [
+    valg: [
       {
         text: 'Du flyr hjem til jorden',
         nextText: 20
@@ -290,7 +260,7 @@ const textNodes = [
   {
     id: 16,
     text: 'Romskipet krasjer fordi du knuste alle kontrollene i skipet',
-    options: [
+    valg: [
       {
         text: 'Restart',
         nextText: -1
@@ -300,7 +270,7 @@ const textNodes = [
   {
     id: 17,
     text: 'Det er altfor mange romvesen, så du dør',
-    options: [
+    valg: [
       {
         text: 'Restart',
         nextText: -1
@@ -310,7 +280,7 @@ const textNodes = [
   {
     id: 18,
     text: 'På veien tilbake finner du en ødelagt robot. Hva gjør du?',
-    options: [
+    valg: [
       {
         text: 'Programmerer den til å skyte vaktene',
         nextText: 23
@@ -324,7 +294,7 @@ const textNodes = [
   {
     id: 19,
     text: 'Du dør av at de skyter deg',
-    options: [
+    valg: [
       {
         text: 'Restart',
         nextText: -1
@@ -334,7 +304,7 @@ const textNodes = [
   {
     id: 20,
     text: 'Gratulerer! Du overlevde og kom deg trygt tilbake igjen til jorden.',
-    options: [
+    valg: [
       {
         text: 'Restart',
         nextText: -1
@@ -344,7 +314,7 @@ const textNodes = [
   {
     id: 21,
     text: 'Du ble oppdaget, og døde dessverre',
-    options: [
+    valg: [
       {
         text: 'Restart',
         nextText: -1
@@ -354,7 +324,7 @@ const textNodes = [
   {
     id: 22,
     text: 'Gratulerer! Nå kaller alle deg "Star Lord"',
-    options: [
+    valg: [
       {
         text: 'Restart',
         nextText: -1
@@ -364,7 +334,7 @@ const textNodes = [
   {
     id: 23,
     text: 'Med dine IT-skills får du til dette, men roboten blir etterhvert ødelagt og du dør',
-    options: [
+    valg: [
       {
         text: 'Restart',
         nextText: -1
@@ -374,7 +344,7 @@ const textNodes = [
   {
     id: 24,
     text: 'Bra valg, fordi den var så og si ødelagt. Du løper nå igjennom gangen og ser et romskip i et rom. Hva gjør du?',
-    options: [
+    valg: [
       {
         text: 'Du går inn i skipet og prøver å fly hjem til jorden',
         nextText: 25
@@ -388,7 +358,7 @@ const textNodes = [
   {
     id: 25,
     text: 'Romskipet var ødelagt, så du dør dessverre',
-    options: [
+    valg: [
       {
         text: 'Restart',
         nextText: -1
@@ -398,7 +368,7 @@ const textNodes = [
   {
     id: 26,
     text: 'Bra valg, fordi den var også ødelagt. Dessverre så er du nå i en blindvei og alle romvesnene er etter deg, så du dør',
-    options: [
+    valg: [
       {
         text: 'Restart',
         nextText: -1
@@ -407,4 +377,5 @@ const textNodes = [
   }
 ]
 
-startGame()
+// Starter funksjonen slik at spillet starter
+startSpill()

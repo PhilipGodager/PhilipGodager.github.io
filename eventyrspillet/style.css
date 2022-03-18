@@ -27,6 +27,7 @@ h1 {
   text-align: center;
   color: #e4eff0;
   margin: 0px;
+  margin-top: 30px;
 }
 
 .container {
@@ -71,6 +72,10 @@ h1 {
   border: 2px solid;
   border-color: red;
   cursor: pointer;
+
+  -webkit-transform: scale(1.02);
+  transform: scale(1.02);
+  /*Dette gjør at man kan skalere, altså zoome boksene*/
 }
 
 .btn:focus{
@@ -82,7 +87,7 @@ h1 {
     font-size: 30px;
   }
 
-  #text{
+  #tekst{
     font-size: 30px;
   }
 
@@ -100,7 +105,7 @@ h1 {
     font-size: 15px;
   }
 
-  #text{
+  #tekst{
     font-size: 15px;
   }
 }
