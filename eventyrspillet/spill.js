@@ -1,9 +1,9 @@
-const easterEggColor = document.getElementById('easterEggColor');
+/*const easterEggColor = document.getElementById('easterEggColor');
 
 easterEggColor.addEventListener('click', function onClick(event) {
   //Bytter fargen på bodyen til rød
   document.body.style.color = 'red';
-});
+});*/
 
 /*
 var easterEggList = document.getElementById("easterEggList");
