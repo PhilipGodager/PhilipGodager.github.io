@@ -16,18 +16,24 @@
   z-index: -1;
 }
 
+a {
+  color: white;
+}
+
 body {
   padding: 0;
   margin: 0;
+
+  overflow: hidden;
 }
 
-h1 {
-  font-size: 70px;
+h1, a {
+  font-size: 60px;
   width: 100vw;
   text-align: center;
   color: #e4eff0;
   margin: 0px;
-  margin-top: 30px;
+  margin-top: 60px;
 }
 
 .container {
@@ -50,7 +56,21 @@ h1 {
   background-color: aliceblue;
 }
 
+#easterEggKnapp{
+  position: relative;
+  top: 100px;
+}
 
+#delete{
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#sist{
+  position: fixed;
+  color: red;
+}
 
 .btn-grid {
   display: grid;
@@ -82,31 +102,61 @@ h1 {
   border-color: red;
 }
 
-@media (max-width: 700px) {
-  .btn{
-    font-size: 30px;
-  }
-
-  #tekst{
-    font-size: 30px;
-  }
-
-  h1{
-    font-size: 60px;
-  }
-
+li{
+  color: white;
 }
 
+@media (max-width: 1000px) {
+  .btn{
+    font-size: 30px;
+  }
+
+  #tekst{
+    font-size: 30px;
+  }
+
+  h1, a{
+    font-size: 35px;
+  }
+
+  .container{
+    max-width: 95%;
+  }
+}
+
+@media (max-width: 800px) {
+  h1, a{
+    font-size: 60px;
+  }
+  .btn{
+    font-size: 20px;
+  }
+
+  #tekst{
+    font-size: 25px;
+  }
+
+  .container{
+    max-width: 95%;
+  }
+  
+}
+
+
 @media (max-width: 700px) {
-  h1{
-    font-size: 50px;
+  h1, a{
+    font-size: 40px;
   }
   .btn{
     font-size: 15px;
   }
 
   #tekst{
-    font-size: 15px;
+    font-size: 20px;
+  }
+
+  .container{
+    max-width: 95%;
   }
 }
 

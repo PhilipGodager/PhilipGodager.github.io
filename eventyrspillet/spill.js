@@ -1,11 +1,24 @@
+const easterEggColor = document.getElementById('easterEggColor');
+
+easterEggColor.addEventListener('click', function onClick(event) {
+  //Bytter fargen på bodyen til rød
+  document.body.style.color = 'red';
+});
+
+var easterEggList = document.getElementById("easterEggList");
+document.getElementById("delete").onclick = function() {
+    easterEggList.removeChild(easterEggList.firstChild);
+};
+
 
 const textElement = document.getElementById('tekst')
 const valgKnapperElement = document.getElementById('valg-knapper')
 
-let state = {}
+let start = {}
 
+//Viser hva som skjer ved starten, altså her skal teskten med id=1 vises
 function startSpill() {
-  state = {}
+  start = {}
   visTextNode(1)
 }
 
@@ -21,33 +34,35 @@ function visTextNode(textNodeIndex) {
       const button = document.createElement('button')
       button.innerText = valg.text
       button.classList.add('btn')
-      button.addEventListener('click', () => selectValg(valg))
+      button.addEventListener('click', () => velgValg(valg))
       valgKnapperElement.appendChild(button)
     }
   })
 }
 
 function visValg(valg) {
-  return valg.requiredState == null || valg.requiredState(state)
+  return valg.requiredStart == null || valg.requiredStart(start)
 }
 
-function selectValg(valg) {
+function velgValg(valg) {
   const nextTextNodeId = valg.nextText
   if (nextTextNodeId <= 0) {
     return startSpill()
   }
-  state = Object.assign(state, valg.setState)
+  start = Object.assign(start, valg.setStart)
   visTextNode(nextTextNodeId)
 }
 
+
+//Her er all teksten og valgene man kan ta
 const textNodes = [
   {
     id: 1,
-    text: 'Trykk her for å begynne spillet',
-    valg: [
+    text: 'Trykk her for å begynne spillet', //Overskriften for valget
+    valg: [ //De ulike valgene man kan ta
       {
-        text: 'Start spillet',
-        nextText: 2
+        text: 'Start spillet', //Tekst for et valg man kan ta
+        nextText: 2 //Refererer til neste id hvis man trykker på denne knappen
       },
     ]
   },
