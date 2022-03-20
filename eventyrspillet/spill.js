@@ -5,12 +5,13 @@ easterEggColor.addEventListener('click', function onClick(event) {
   document.body.style.color = 'red';
 });
 
+/*
 var easterEggList = document.getElementById("easterEggList");
 document.getElementById("delete").onclick = function() {
     easterEggList.removeChild(easterEggList.firstChild);
-};
+};*/
 
-
+//Henter elementene tekst og valg-knapper
 const textElement = document.getElementById('tekst')
 const valgKnapperElement = document.getElementById('valg-knapper')
 
@@ -22,6 +23,7 @@ function startSpill() {
   visTextNode(1)
 }
 
+//Funksjonen viser teksten for knappene
 function visTextNode(textNodeIndex) {
   const textNode = textNodes.find(textNode => textNode.id === textNodeIndex)
   textElement.innerText = textNode.text

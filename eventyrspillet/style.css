@@ -1,3 +1,4 @@
+/*Generelt*/
 *, *::before, *::after {
   box-sizing: border-box;
   font-family: "Orbitron";
@@ -7,19 +8,6 @@
   padding: 0px;
 }
 
-#bakgrunnsvideo {
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  min-width: 100%;
-  min-height: 100%;
-  z-index: -1;
-}
-
-a {
-  color: white;
-}
-
 body {
   padding: 0;
   margin: 0;
@@ -27,21 +15,21 @@ body {
   overflow: hidden;
 }
 
-h1, a {
-  font-size: 60px;
-  width: 100vw;
-  text-align: center;
-  color: #e4eff0;
-  margin: 0px;
-  margin-top: 60px;
+#bakgrunnsvideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1; /*Plasserer videoen helt bakerst*/
 }
 
+/*Spillet*/
 .container {
   position: relative;
   top: 100px;
   width: 1000px;
   max-width: 80%;
-  /*background: url(Bilder/valg1.jpg);*/
   padding: 10px;
   border-radius: 8px;
   box-shadow: 0 0 10px 2px;
@@ -54,22 +42,6 @@ h1, a {
   justify-content: center;
 
   background-color: aliceblue;
-}
-
-#easterEggKnapp{
-  position: relative;
-  top: 100px;
-}
-
-#delete{
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-#sist{
-  position: fixed;
-  color: red;
 }
 
 .btn-grid {
@@ -102,13 +74,51 @@ h1, a {
   border-color: red;
 }
 
+/*Tekst*/
+a {
+  color: white;
+}
+
+
+h1, a {
+  font-size: 60px;
+  width: 100vw;
+  text-align: center;
+  color: #e4eff0;
+  margin: 0px;
+  margin-top: 60px;
+}
+
+
+/*Easter eggs*/
+#easterEggKnapp{
+  position: relative;
+  top: 100px;
+}
+
+#delete{
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#sist{
+  position: fixed;
+  color: red;
+}
+
 li{
   color: white;
 }
 
+/*Når width < 1000px*/
 @media (max-width: 1000px) {
   .btn{
     font-size: 30px;
+  }
+
+  #easterEggColor{
+    visibility: hidden;
   }
 
   #tekst{
@@ -117,16 +127,19 @@ li{
 
   h1, a{
     font-size: 35px;
+    max-width: 95%;
   }
 
   .container{
-    max-width: 95%;
+    max-width: 95%; /*Unngår marger når skjermstørrelsen er mindre*/
   }
 }
 
+/*Når width < 800px*/
 @media (max-width: 800px) {
   h1, a{
     font-size: 60px;
+    max-width: 95%;
   }
   .btn{
     font-size: 20px;
@@ -142,10 +155,11 @@ li{
   
 }
 
-
+/*Når width < 700px*/
 @media (max-width: 700px) {
   h1, a{
     font-size: 40px;
+    max-width: 95%;
   }
   .btn{
     font-size: 15px;
