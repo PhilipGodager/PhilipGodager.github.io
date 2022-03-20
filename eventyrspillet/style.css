@@ -126,6 +126,10 @@ li{
     visibility: hidden;
   }
 
+  #antiEasterEgg{
+    visibility: visible;
+  }
+
   #tekst{
     font-size: 30px;
   }
