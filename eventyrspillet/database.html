@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="style.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Orbitron"> <!--Bruker sci fi font fra Google Fonts-->
+  <script defer src="database.js"></script>
+  <link rel="icon" href="Bilder/ikon.jpg">
+  <title>Eventyrspillet</title>
+</head>
+<body id="database">
+  <!--
+  <button id="myBtn" onclick="myFunction()">Skru av musikk</button>
+  <embed id="bakgrunnsmusikk" src="Lyder/bakgrunnsmusikk.mp3" loop="true" autostart="true" width="0" height="0">-->
+  
+  <!--<a id="easterEggColor">i</a>-->
+    
+    <h1 id="registrer_deg">Registrer deg</h1>
+
+    <div id="localStorage"></div>
+
+
+    <div id="nybruker">
+        <label for="fornavn" class="nybruker_tekst">Fornavn</label>
+        <input type="text" id="fornavn">
+
+        <label for="etternavn" class="nybruker_tekst">Etternavn</label>
+        <input type="text" id="etternavn">
+
+        <button id="registrer" class="nybruker_tekst">Registrer</button>
+        
+    </div>
+
+    <div id="hoved">
+        <!--Brukernes informasjon kommer her-->
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-firestore.js"></script>
+    
+
+
+  <!--<div class="container">-->
+    <!--<div id="text">Text</div>-->
+    <!--<div id="tekst">Tekst</div>
+    <div id="valg-knapper" class="btn-grid">-->
+
+      
+    <!--<audio id="onclick" src="Lyder/onclick.wav"></audio>
+    <a onclick="document.getElementById('onclick').play();"><button class="btn"></button></a>-->
+
+      <!--<button tabindex="0" class="btn">Valg 1</button> tabindex=0 gjør at man kan bruke tabulator-knappen enkelt for å velge knapper-->
+      <!--<button class="btn">Valg 2</button>
+      <button class="btn">Valg 3</button>
+      <button class="btn">Valg 4</button>
+    </div>-->
+    
+  <!--</div>-->
+
+  <a id="spill_igjen" href="index.html">Trykk her for å spille igjen!</a>
+</body>
+</html>

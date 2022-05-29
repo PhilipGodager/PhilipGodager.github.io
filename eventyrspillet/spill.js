@@ -1,15 +1,14 @@
-/*const easterEggColor = document.getElementById('easterEggColor');
+let knappLyd = new Audio('./Lyder/onclick.wav'); //Henter lyd for knapper
+knappLyd.volume = 0.3; //Setter volumet til 0.3
 
-easterEggColor.addEventListener('click', function onClick(event) {
-  //Bytter fargen på bodyen til rød
-  document.body.style.color = 'red';
-});*/
+let restartLyd = new Audio('./Lyder/restart.wav'); //Henter lyd for restart
+restartLyd.volume = 0.3;
 
-/*
-var easterEggList = document.getElementById("easterEggList");
-document.getElementById("delete").onclick = function() {
-    easterEggList.removeChild(easterEggList.firstChild);
-};*/
+let backgroundmusic = new Audio('./Lyder/backgroundmusic.mp3'); // Henter lyd for bakgrunnsmusikk
+backgroundmusic.volume = 0.2;
+
+let winLyd = new Audio('./Lyder/win.mp3'); //Henter lyd for når man har vunnet
+winLyd.volume = 0.3;
 
 //Henter elementene tekst og valg-knapper
 const textElement = document.getElementById('tekst')
@@ -48,13 +47,26 @@ function visValg(valg) {
 
 function velgValg(valg) {
   const nextTextNodeId = valg.nextText
-  if (nextTextNodeId <= 0) {
-    return startSpill()
+  if (nextTextNodeId == -1) {
+    restartLyd.play();
+    return startSpill();
   }
+  else if(nextTextNodeId == 20 || nextTextNodeId == 22){
+    winLyd.play();
+  }
+  else if(nextTextNodeId == 2) {
+    backgroundmusic.play();
+  }
+  else if(nextTextNodeId >= 0) {
+    knappLyd.play();
+  }
+  else if (nextTextNodeId == -2) {
+  window.location.replace("./database.html")
+  }
+  
   start = Object.assign(start, valg.setStart)
   visTextNode(nextTextNodeId)
 }
-
 
 //Her er all teksten og valgene man kan ta
 const textNodes = [
@@ -325,6 +337,10 @@ const textNodes = [
       {
         text: 'Restart',
         nextText: -1
+      },
+      {
+        text: 'Registrer deg',
+        nextText: -2
       }
     ]
   },
@@ -345,6 +361,10 @@ const textNodes = [
       {
         text: 'Restart',
         nextText: -1
+      },
+      {
+        text: 'Registrer deg',
+        nextText: -2
       }
     ]
   },

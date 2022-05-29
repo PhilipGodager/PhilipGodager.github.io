@@ -2,10 +2,18 @@
 *, *::before, *::after {
   box-sizing: border-box;
   font-family: "Orbitron";
-  font-size: 25px;
+  font-size: 40px;
 
   margin: 0px;
   padding: 0px;
+}
+
+#database {
+  background-image: url('Bilder/database_bilde.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
 }
 
 body {
@@ -14,6 +22,30 @@ body {
 
   /*overflow: hidden;*/
 }
+
+
+#registrer:hover{
+  cursor: pointer;
+}
+
+#registrer {
+  margin-top: 40px;
+}
+
+#spill_igjen{
+  color: white;
+  display: flex;
+  justify-content: center;
+
+  margin-bottom: 30px;
+
+  font-size: 40px;
+}
+
+#spill_igjen:hover{
+  color: red;
+}
+
 
 #bakgrunnsvideo {
   position: fixed;
@@ -44,11 +76,8 @@ body {
   background-color: aliceblue;
 }
 
-.btn-grid {
-  display: grid;
-  grid-template-columns: repeat(2, auto);
-  gap: 10px;
-  margin-top: 20px;
+#tekst{
+  font-size: 25px;
 }
 
 .btn {
@@ -58,6 +87,14 @@ body {
   padding: 5px 10px;
   color: white;
   outline: none;
+  font-size: 25px;
+}
+
+.btn-grid {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 10px;
+  margin-top: 20px;
 }
 
 .btn:hover {
@@ -72,6 +109,10 @@ body {
 
 .btn:focus{
   border-color: red;
+}
+
+.timerClock{
+  color: white;
 }
 
 /*Tekst*/
@@ -90,40 +131,31 @@ h1, a {
 }
 
 
-/*Easter eggs*/
+/*Database*/
+#nybruker{
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  margin: auto;
+  margin-bottom: 30px;
 
-#easterEggKnapp{
-  position: relative;
-  top: 100px;
-}
-
-#delete{
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-#sist{
-  position: fixed;
-  color: red;
-}
-
-li{
   color: white;
 }
 
+.nybruker_tekst{
+  margin-top: 20px;
+}
+
+
 /*Når width < 1000px*/
 @media (max-width: 1000px) {
-  .btn{
-    font-size: 30px;
-  }
 
-  #easterEggColor{
-    visibility: hidden;
+  .btn{
+    font-size: 10px;
   }
 
   #tekst{
-    font-size: 30px;
+    font-size: 60px;
   }
 
   h1, a{
@@ -134,6 +166,23 @@ li{
   .container{
     max-width: 95%; /*Unngår marger når skjermstørrelsen er mindre*/
   }
+}
+
+
+
+#registrer_deg, h1, #localStorage{
+  font-size: 40px;
+  color: white;
+
+  text-align: center;
+}
+
+.nybruker_tekst{
+  font-size: 30px;
+}
+
+#nybruker{
+  max-width: 95%;
 }
 
 /*Når width < 800px*/
