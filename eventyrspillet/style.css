@@ -169,10 +169,17 @@ h1, a {
 }
 
 
-
-#registrer_deg, h1, #localStorage{
+#registrer_deg, h1{
   font-size: 40px;
-  color: white;
+  
+}
+
+#localStorage{
+  color: #78cce2;
+
+  margin-top: 20px;
+  
+  font-size: 30px;
 
   text-align: center;
 }
