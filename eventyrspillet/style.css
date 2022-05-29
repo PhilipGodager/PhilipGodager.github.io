@@ -23,30 +23,6 @@ body {
   /*overflow: hidden;*/
 }
 
-
-#registrer:hover{
-  cursor: pointer;
-}
-
-#registrer {
-  margin-top: 40px;
-}
-
-#spill_igjen{
-  color: white;
-  display: flex;
-  justify-content: center;
-
-  margin-bottom: 30px;
-
-  font-size: 40px;
-}
-
-#spill_igjen:hover{
-  color: red;
-}
-
-
 #bakgrunnsvideo {
   position: fixed;
   right: 0;
@@ -111,10 +87,6 @@ body {
   border-color: red;
 }
 
-.timerClock{
-  color: white;
-}
-
 /*Tekst*/
 a {
   color: white;
@@ -140,11 +112,57 @@ h1, a {
   margin-bottom: 30px;
 
   color: white;
+
+  max-width: 95%;
 }
 
 .nybruker_tekst{
   margin-top: 20px;
+
+  font-size: 30px;
 }
+
+#fornavn, #etternavn{
+  font-size: 25px;
+}
+
+#registrer:hover{
+  cursor: pointer;
+}
+
+#registrer {
+  margin-top: 40px;
+}
+
+#registrer_deg, h1{
+  font-size: 40px;
+}
+
+#spill_igjen{
+  color: white;
+  display: flex;
+  justify-content: center;
+
+  margin-bottom: 30px;
+
+  font-size: 40px;
+}
+
+#spill_igjen:hover{
+  color: red;
+}
+
+/*Local storage*/
+#localStorage{
+  color: #78cce2;
+
+  margin-top: 20px;
+  
+  font-size: 30px;
+
+  text-align: center;
+}
+
 
 
 /*Når width < 1000px*/
@@ -168,29 +186,6 @@ h1, a {
   }
 }
 
-
-#registrer_deg, h1{
-  font-size: 40px;
-  
-}
-
-#localStorage{
-  color: #78cce2;
-
-  margin-top: 20px;
-  
-  font-size: 30px;
-
-  text-align: center;
-}
-
-.nybruker_tekst{
-  font-size: 30px;
-}
-
-#nybruker{
-  max-width: 95%;
-}
 
 /*Når width < 800px*/
 @media (max-width: 800px) {

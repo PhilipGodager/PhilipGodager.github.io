@@ -45,6 +45,7 @@ function visValg(valg) {
   return valg.requiredStart == null || valg.requiredStart(start)
 }
 
+// if setninger for hva som skjer når nexTextNodeId er et spesifikt tall, eksempelvis skal musikk osv. spilles av
 function velgValg(valg) {
   const nextTextNodeId = valg.nextText
   if (nextTextNodeId == -1) {

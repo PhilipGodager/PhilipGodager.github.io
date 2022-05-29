@@ -53,14 +53,14 @@ function addUser() {
     )   
 }
 
-//Man kan skrive .orderBy("fornavn") etter (collectionName) for å sortere etter "fornavn"
+//Man kan eksempelvis skrive .orderBy("fornavn") etter (collectionName) for å sortere etter "fornavn"
 function getUsers() {
     // Henter data. Når dataene er ferdig hentet, starter "then"-biten
     db.collection(collectionName).get().then((snapshot) => {
         // Henter ut dokumentene
         let dokumenter = snapshot.docs;
 
-        hovedEl.innerHTML = `<h1 style="font-size: 40px; color: white;">De siste 10 spillerne som har klart å vinne</h1>`
+        hovedEl.innerHTML = `<h1 style="font-size: 40px; color: white;">De siste 10 spillerne som har klart å vinne</h1>` // Dette er usortert, ellers måtte man lagt inn klokkeslett for å logge de som var først osv.
         
 
         // Går gjennom dokumentene
@@ -86,12 +86,15 @@ function getUsers() {
 
 }
 
+//Local storage til hvor mange ganger man har vært på nettsiden
+
+
 // Henter element fra DOM
 let localStorageEl = document.querySelector("#localStorage");
 
 // Undersøker om localStorage-variabelen er satt
 if (localStorage.antallBesok) {
-  // Alt lagres som tekst i localStorage, så vi må gjøre om til tall
+  // Vi gjør om tekst til tall
   localStorage.antallBesok = Number(localStorage.antallBesok) + 1;
 } else {
   localStorage.antallBesok = 1;
