@@ -7,6 +7,8 @@ import knapp
 from pygame.locals import *
 from player import Player
 
+pygame.display.set_caption("Mage Knight")
+
 
 pygame.init()
 
@@ -40,7 +42,7 @@ run = True
 spill = False
 
 # Variabel som styrer om spillet er ferdig
-gameOver = False
+#gameOver = False
 
 
 #Tekst
@@ -70,8 +72,6 @@ while run:
     if spill == True:
         screen.fill("purple")
         level.run()
-    elif gameOver:
-        print("HALLA")
     else:
         tegnTekst("Trykk ENTER!", font, TEKST_FARGE, (screen_width//2, screen_height//2))
     
@@ -79,14 +79,14 @@ while run:
     for event in pygame.event.get():
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_RETURN:
-                
+                #Starter musikken hvis man trykker enter
                 pygame.mixer.music.load("lyd/spill.wav")
-                pygame.mixer.music.play()
-                
-                
-
+                pygame.mixer.music.play(-1)
                 spill = True
+                
             if event.key == pygame.K_ESCAPE:
+                #Stopper musikken hvis man tar på pause
+                pygame.mixer.music.stop()
                 pause = True
                 
                 
@@ -94,6 +94,8 @@ while run:
     if pause == True:
         screen.fill("black")
         if resume_knapp.draw(screen):
+            pygame.mixer.music.load("lyd/spill.wav")
+            pygame.mixer.music.play(-1)
             pause = False
         elif quit_knapp.draw(screen):
             run = False

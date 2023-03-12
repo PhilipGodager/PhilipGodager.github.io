@@ -17,7 +17,7 @@ def hent_mappe(path):
 
 
 #Funksjon for å importere csv filer fra Tiled
-def import_csv_layout(path):
+def importer_csv(path):
     terreng_kart = []
     with open(path) as kart:
         level = reader(kart, delimiter = ",")

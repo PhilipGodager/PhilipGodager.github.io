@@ -2,7 +2,7 @@ import pygame
 from tiles import Tile, StaticTile
 from settings import tile_size, screen_width, screen_height
 from player import Player
-from support import import_csv_layout, import_cut_graphics
+from support import importer_csv, import_cut_graphics
 
 class Level:
     def __init__(self, level_data, surface):
@@ -10,30 +10,34 @@ class Level:
         #self.setup_level(level_data)
         
         #Terreng
-        terreng = import_csv_layout(level_data["terrain"])
+        terreng = importer_csv(level_data["terrain"])
         self.terreng_objekter = self.create_tile_group(terreng, "terrain")
         
         #Gress
-        gress = import_csv_layout(level_data["grass"])
+        gress = importer_csv(level_data["grass"])
         self.gress_objekter = self.create_tile_group(gress, "grass")
         
         #Penger
-        penger = import_csv_layout(level_data["coins"])
+        penger = importer_csv(level_data["coins"])
         self.penger_objekter = self.create_tile_group(penger, "coins")
         #self.penger_samlet = penger_samlet
         
         #Spiller
-        spiller = import_csv_layout(level_data["player"])
+        spiller = importer_csv(level_data["player"])
         self.spiller = pygame.sprite.GroupSingle()
         #self.goal = pygame.sprite.GroupSingle()
         self.spiller_setup(spiller)
         
-        
+        """
         #Spiker
-        spiker = import_csv_layout(level_data["spikes"])
+        spiker = importer_csv(level_data["spikes"])
         self.spiker_objekter = self.create_tile_group(spiker, "spikes")
         
+        """
         
+        
+        #.score = 0
+        #self.hent_penge = hent_penge
         
         
     
@@ -41,17 +45,28 @@ class Level:
         self.world_shift = 0
         
         self.current_x = 0
+    
+    """
+    def endre_score(self, antall):
+        self.score += antall
         
+    def penger_kollisjon(self):
+        penger_kollidert = pygame.sprite.spritecollide(self.player.sprite, self.penger_objekter, True)
+        
+        if penger_kollidert:
+            for penger in penger_kollidert:
+            self.endre_score(1)
+    """
 
         
     def create_tile_group(self, layout, type):
         sprite_group = pygame.sprite.Group()
         
-        for row_index, row in enumerate(layout):
-            for colomn_index, value in enumerate(row):
+        for rad_nummer, rad in enumerate(layout):
+            for kolonne_nummer, value in enumerate(rad):
                 
-                x = colomn_index * tile_size
-                y = row_index * tile_size   
+                x = kolonne_nummer * tile_size
+                y = rad_nummer * tile_size   
                     
                 #Hvis verdien i csv-filen = "-1", betyr dette at det ikke er noe på posisjonen
                 if value != "-1":
@@ -83,10 +98,10 @@ class Level:
     def spiller_setup(self, layout):
         #sprite_group = pygame.sprite.Group()
         
-        for rad_index, rad in enumerate(layout):
-            for kolonne_index, value in enumerate(rad):
-                x = kolonne_index * tile_size
-                y = rad_index * tile_size
+        for rad_nummer, rad in enumerate(layout):
+            for kolonne_nummer, value in enumerate(rad):
+                x = kolonne_nummer * tile_size
+                y = rad_nummer * tile_size
                 if value == "0":
                     sprite = Player((x,y), self.display_surface)
                     self.spiller.add(sprite)         
@@ -168,13 +183,7 @@ class Level:
             if spiller.on_ceiling and spiller.direction.y > 0:
                 spiller.on_ceiling = False
                 
-    """
-    def penge_kollisjon(self):
-        penger_hentet = pygame.sprite.spritecollide(self.spiller.sprite, self.penger_objekter, True)
-        if penger_hentet:
-            for penger in penger_hentet:
-                self.penger_samlet(1)
-    """
+
     def run(self):
         #Lar oss skrolle spillet til sidene
         self.scroll_x()

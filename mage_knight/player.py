@@ -32,6 +32,8 @@ class Player(pygame.sprite.Sprite):
         
         #Skjermen
         self.screen = pygame.display.set_mode((screen_width, screen_height))
+        self.display_surface = surface
+        
     
     
     def hent_karakter(self):
@@ -120,14 +122,25 @@ class Player(pygame.sprite.Sprite):
     def gameOver(self):
         #Sjekker om spilleren er under skjermen. I så fall er det gameOver
         if self.rect.y > screen_height:
-            #print("Prøv igjen")
-            #self.gameOver = True
+            font_size = 16
+            font = pygame.font.Font("font/pixel_font.ttf" , font_size)
+
+            tekst = font.render("Synd, trist, leit, du lever ikke lenger. Trykk krysset og start igjen!", True, "green", "blue")
+            tekst_rect = tekst.get_rect()
+            tekst_rect.center = (screen_width // 2, screen_height // 2)
+            
             pygame.mixer.music.stop()
             self.screen.fill("black")
-            global game_over
-            game_over = True
             
+            self.display_surface.blit(tekst, tekst_rect)
             
+            run = False
+            
+    def vinn(self):
+        if self.image.get_rect(midbottom = self.rect.midbottom) == tile_size:
+            print("DU VANT!")
+        
+    
         
     def apply_gravity(self):
         self.direction.y += self.gravity
@@ -142,6 +155,7 @@ class Player(pygame.sprite.Sprite):
         self.get_status()
         self.animer()
         self.gameOver()
+        self.vinn()
         
 
         
