@@ -130,17 +130,35 @@ class Player(pygame.sprite.Sprite):
             tekst_rect.center = (screen_width // 2, screen_height // 2)
             
             pygame.mixer.music.stop()
-            self.screen.fill("black")
+            gameOver_bilde = pygame.image.load("bilder/bakgrunn/gameOver.png")
+            gameOver_bilde = pygame.transform.scale(gameOver_bilde, (screen_width, screen_height))
+            
+            self.screen.blit(gameOver_bilde, (0,0))
+            #self.screen.fill("black")
             
             self.display_surface.blit(tekst, tekst_rect)
             
             run = False
             
     def vinn(self):
-        if self.image.get_rect(midbottom = self.rect.midbottom) == tile_size:
-            print("DU VANT!")
+        font_size = 32
+        font = pygame.font.Font("font/pixel_font.ttf" , font_size)
+
+        tekst = font.render("Gratulerer, du vant!", True, "green", "blue")
+        tekst_rect = tekst.get_rect()
+        tekst_rect.center = (screen_width // 2, screen_height // 2)
         
-    
+        if self.on_ground and self.rect.y < -10:
+            self.screen.fill("green")
+            
+            self.display_surface.blit(tekst, tekst_rect)
+            
+            pygame.mixer.music.stop()
+            
+            """
+            pygame.mixer.music.load("lyd/vinn.wav")
+            pygame.mixer.music.play()
+            """
         
     def apply_gravity(self):
         self.direction.y += self.gravity

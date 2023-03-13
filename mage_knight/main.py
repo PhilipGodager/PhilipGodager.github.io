@@ -7,6 +7,7 @@ import knapp
 from pygame.locals import *
 from player import Player
 
+#Tittel på spillet
 pygame.display.set_caption("Mage Knight")
 
 
@@ -70,7 +71,7 @@ while run:
     # Fyller skjermen med et bakrunnsbilde
     screen.blit(bakgrunnsbilde, (0,0))
     if spill == True:
-        screen.fill("purple")
+        screen.blit(bakgrunnsbilde, (0,0))
         level.run()
     else:
         tegnTekst("Trykk ENTER!", font, TEKST_FARGE, (screen_width//2, screen_height//2))
@@ -92,7 +93,7 @@ while run:
                 
     #Hva som skjer hvis man har trykket ESCAPE, altså pause
     if pause == True:
-        screen.fill("black")
+        screen.blit(bakgrunnsbilde, (0,0))
         if resume_knapp.draw(screen):
             pygame.mixer.music.load("lyd/spill.wav")
             pygame.mixer.music.play(-1)
