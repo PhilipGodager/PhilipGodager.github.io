@@ -134,7 +134,7 @@ class Player(pygame.sprite.Sprite):
             tekst_rect = tekst.get_rect()
             tekst_rect.center = (screen_width // 2, screen_height // 2)
             
-            #pygame.mixer.music.stop()
+            pygame.mixer.music.stop()
             """
             pygame.mixer.music.load("lyd/gameOver.wav")
             pygame.mixer.music.play()
