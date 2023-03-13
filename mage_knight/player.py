@@ -97,6 +97,11 @@ class Player(pygame.sprite.Sprite):
             
         if (keys[pygame.K_SPACE] or keys[pygame.K_UP]) and self.on_ground:
             self.jump()
+            #pygame.mixer.music.load("lyd/jump.wav")
+            #pygame.mixer.music.play()
+            
+            
+            
             
     #Finner ut hvordan spilleren beveger seg
     def get_status(self):
@@ -129,7 +134,11 @@ class Player(pygame.sprite.Sprite):
             tekst_rect = tekst.get_rect()
             tekst_rect.center = (screen_width // 2, screen_height // 2)
             
-            pygame.mixer.music.stop()
+            #pygame.mixer.music.stop()
+            """
+            pygame.mixer.music.load("lyd/gameOver.wav")
+            pygame.mixer.music.play()
+            """
             gameOver_bilde = pygame.image.load("bilder/bakgrunn/gameOver.png")
             gameOver_bilde = pygame.transform.scale(gameOver_bilde, (screen_width, screen_height))
             
